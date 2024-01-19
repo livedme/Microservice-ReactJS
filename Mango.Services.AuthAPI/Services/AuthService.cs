@@ -33,7 +33,9 @@ namespace Mango.Services.AuthAPI.Services
             }
 
             // create jwt token
-            var token = jwtTokenGenerator.GenerateToken(user);
+            var roles= await userManager.GetRolesAsync(user);
+
+            var token = jwtTokenGenerator.GenerateToken(user, roles);
 
             UserDto userDto = new()
             {

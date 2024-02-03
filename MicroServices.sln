@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{ADB819A7-64B4-4AFF-BA2B-69EFB3F6577A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.Web", "Todo.Web\Todo.Web.csproj", "{47E64AAC-F3FE-4C8A-88B5-C71F84B0766E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.MVC", "Todo.Web\Todo.MVC.csproj", "{47E64AAC-F3FE-4C8A-88B5-C71F84B0766E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.GatewaySolution", "Todo.GatewaySolution\Todo.GatewaySolution.csproj", "{F2BC076C-48FB-4799-B05E-A1A1B0D9B7F8}"
 EndProject
@@ -30,6 +30,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.Services.RewardAPI", "Todo.Services.RewardAPI\Todo.Services.RewardAPI.csproj", "{8D4D3523-CE48-4196-B495-D105BF436A19}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.Services.ShoppingCartAPI", "Todo.Services.ShoppingCartAPI\Todo.Services.ShoppingCartAPI.csproj", "{4F9B2C27-1F26-42AF-956E-2318D5BBC68B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.Blazor", "Todo.Blazor\Todo.Blazor.csproj", "{F1B086CA-633D-4CEB-94E1-3CD00B03059D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,10 @@ Global
 		{4F9B2C27-1F26-42AF-956E-2318D5BBC68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F9B2C27-1F26-42AF-956E-2318D5BBC68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F9B2C27-1F26-42AF-956E-2318D5BBC68B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1B086CA-633D-4CEB-94E1-3CD00B03059D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1B086CA-633D-4CEB-94E1-3CD00B03059D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1B086CA-633D-4CEB-94E1-3CD00B03059D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1B086CA-633D-4CEB-94E1-3CD00B03059D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +98,7 @@ Global
 		{CA28B545-91DD-4E75-971F-39BAB5CBC845} = {ADB819A7-64B4-4AFF-BA2B-69EFB3F6577A}
 		{8D4D3523-CE48-4196-B495-D105BF436A19} = {ADB819A7-64B4-4AFF-BA2B-69EFB3F6577A}
 		{4F9B2C27-1F26-42AF-956E-2318D5BBC68B} = {ADB819A7-64B4-4AFF-BA2B-69EFB3F6577A}
+		{F1B086CA-633D-4CEB-94E1-3CD00B03059D} = {9DBEDFC7-6695-43A2-A386-869558CE9FCA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {929D2BC7-133A-46CF-89C4-0315B8019576}

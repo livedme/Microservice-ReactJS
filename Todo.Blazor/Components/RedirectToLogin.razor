@@ -1,0 +1,28 @@
+﻿@page "/RedirectToLogin"
+@inject NavigationManager navigationManager
+
+@code {
+
+    //[Inject]
+    //public AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+        navigationManager.NavigateTo("/Auth/login");
+        //var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        //var user = authState.User;
+        //if (user != null && user.Identity != null && user.Identity.IsAuthenticated)
+        //{
+        //    navigationManager.NavigateTo("");
+        //}
+        //else
+        //{
+        //    navigationManager.NavigateTo("/Account/login");
+        //}
+    }
+}

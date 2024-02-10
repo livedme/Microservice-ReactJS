@@ -38,7 +38,7 @@ namespace Todo.Blazor.Service
             {
                 ApiType = SD.ApiType.GET,
                 Url = SD.ProductAPIBase + "/api/product"
-            });
+            },false);
         }
 
       
@@ -49,7 +49,7 @@ namespace Todo.Blazor.Service
             {
                 ApiType = SD.ApiType.GET,
                 Url = SD.ProductAPIBase + "/api/product/" + id
-            });
+            },false);
         }
 
         public async Task<ResponseDto?> UpdateProductsAsync(ProductDto productDto)

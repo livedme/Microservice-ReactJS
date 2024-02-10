@@ -1,0 +1,35 @@
+﻿@page "/product/{id:int}"
+@using Todo.Blazor.Components.Common.Product
+<h3>Product @id</h3>
+
+@if (product.ProductId > 0)
+{
+    <ProductCard product="@product"></ProductCard>
+}
+else
+{
+    <p>loading....</p>
+}
+
+@inject IProductService productService;
+@inject ICartService cartService;
+
+@code {
+
+    [Parameter]
+    public int id { get; set; }
+    private ProductDto? product = new();
+    protected override async Task OnInitializedAsync()
+    {
+        ResponseDto? response = await productService.GetProductByIdAsync(id);
+
+        if (response != null && response.IsSuccess)
+        {
+            product = JsonConvert.DeserializeObject<ProductDto>(Convert.ToString(response.Result));
+        }
+        else
+        {
+            //  TempData["error"] = response?.Message;
+        }       
+    }
+}

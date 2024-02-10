@@ -58,7 +58,7 @@ namespace Mango.Services.AuthAPI.Service
             {
                 Email = user.Email,
                 ID = user.Id,
-                Name = user.Name,
+                FullName = user.FullName,
                 PhoneNumber = user.PhoneNumber
             };
 
@@ -78,7 +78,7 @@ namespace Mango.Services.AuthAPI.Service
                 UserName = registrationRequestDto.Email,
                 Email = registrationRequestDto.Email,
                 NormalizedEmail = registrationRequestDto.Email.ToUpper(),
-                Name = registrationRequestDto.Name,
+                FullName = registrationRequestDto.Name,
                 PhoneNumber = registrationRequestDto.PhoneNumber
             };
 
@@ -93,7 +93,7 @@ namespace Mango.Services.AuthAPI.Service
                     {
                         Email = userToReturn.Email,
                         ID = userToReturn.Id,
-                        Name = userToReturn.Name,
+                        FullName = userToReturn.FullName,
                         PhoneNumber = userToReturn.PhoneNumber
                     };
 

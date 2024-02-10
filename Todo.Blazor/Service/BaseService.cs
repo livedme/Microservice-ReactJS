@@ -4,18 +4,15 @@ using Newtonsoft.Json;
 using System.Net;
 using System.Text;
 using static Todo.Blazor.Utility.SD;
+using Todo.Blazor.Helpers;
+using Microsoft.JSInterop;
 
 namespace Todo.Blazor.Service
 {
-    public class BaseService : IBaseService
+    public class BaseService(IHttpClientFactory _httpClientFactory, IJSRuntime _js) : IBaseService
     {
-        private readonly IHttpClientFactory _httpClientFactory;
-        private readonly ITokenProvider _tokenProvider;
-        public BaseService(IHttpClientFactory httpClientFactory, ITokenProvider tokenProvider)
-        {
-                _httpClientFactory = httpClientFactory;
-            _tokenProvider = tokenProvider;
-        }
+        private readonly IHttpClientFactory httpClientFactory = _httpClientFactory;
+        private readonly IJSRuntime js= _js;
 
         public async Task<ResponseDto?> SendAsync(RequestDto requestDto, bool withBearer = true)
         {
@@ -34,7 +31,7 @@ namespace Todo.Blazor.Service
                 //token
                 if (withBearer)
                 {
-                    var token = _tokenProvider.GetToken();
+                    var token = await js.GetToken("");
                     message.Headers.Add("Authorization", $"Bearer {token}");
                 }
 
@@ -69,9 +66,6 @@ namespace Todo.Blazor.Service
                         message.Content = new StringContent(JsonConvert.SerializeObject(requestDto.Data), Encoding.UTF8, "application/json");
                     }
                 }
-
-
-
                
 
                 HttpResponseMessage? apiResponse = null;

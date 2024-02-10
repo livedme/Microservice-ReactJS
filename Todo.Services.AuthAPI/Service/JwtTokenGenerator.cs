@@ -24,9 +24,10 @@ namespace Mango.Services.AuthAPI.Service
 
             var claimList = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.Email,applicationUser.Email),
-                new Claim(JwtRegisteredClaimNames.Sub,applicationUser.Id),
-                new Claim(JwtRegisteredClaimNames.Name,applicationUser.UserName)
+                new(JwtRegisteredClaimNames.Email,applicationUser.Email!),
+                new(JwtRegisteredClaimNames.Name,applicationUser.UserName!),
+                new(JwtRegisteredClaimNames.GivenName,applicationUser.FullName),
+                new(JwtRegisteredClaimNames.NameId,applicationUser.Id)           
             };
 
             claimList.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));

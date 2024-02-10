@@ -1,0 +1,39 @@
+﻿@page "/Auth/Login"
+@using Microsoft.AspNetCore.Components.Forms
+@using Todo.Blazor.Models;
+@* @layout AnonymousLayout *@
+@inherits LoginBase
+@rendermode InteractiveServer
+
+<div class="container mx-auto">
+    <div class="row mx-100">
+        <div class="col-12 col-md-6 offset-md-3">
+            <section>
+                <EditForm Model="@model" method="post" OnValidSubmit="LoginUser" FormName="Login">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary class="text-danger" role="alert" />
+                    <hr />
+                    <div class="row">
+                        <div class="col-12 col-md-6 offset-md-3 pb-2">
+                            <label for="UserName" class="form-label">UserName</label>
+                            <InputText @bind-Value="model.UserName" class="form-control" aria-required="true" placeholder="" />
+                            <ValidationMessage For="() => model.UserName" class="text-danger" />
+                        </div>
+                        <div class="col-12 col-md-6 offset-md-3 pb-2">
+                            <label for="password" class="form-label">Password</label>
+                            <InputText type="password" @bind-Value="model.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="" />
+                            <ValidationMessage For="() => model.Password" class="text-danger" />
+                        </div>
+                        <div class="col-12 col-md-6 offset-md-3 pb-2">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" value="Submit">Login</button>
+                        </div>
+                    </div>
+                </EditForm>
+            </section>
+        </div>
+    </div>
+</div>
+@code {
+
+
+}
